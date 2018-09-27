@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - ACT</title>
+</head>
+<body>
+    <script>
+        var mark1 = prompt("Enter the first mark");
+        var mark2 = prompt("Enter the second mark");
+        var mark3 = prompt("Enter the third mark");
+        var email = prompt("Enter your email");
+        var emailRepeat = prompt("Repeat your email");
+        var age = prompt("Enter your age");
+        var num = prompt("Enter a number");
+
+        mark1 = parseInt(mark1);
+        mark2 = parseInt(mark2);
+        mark3 = parseInt(mark3);
+        age = parseInt(age);
+        num = parseInt(num);
+
+        if ((mark1 + mark2 + mark3) / 3 >= 5) {
+            document.write("Congratulations! You pass the exam");
+            document.write("<br>");
+        }
+
+        if (email !== emailRepeat) {
+            document.writeln("Emails are different");
+            document.write("<br>");
+        }
+
+        if (age >= 18 && age < 65) {
+            document.writeln("You are in working age");
+            document.write("<br>");
+        }
+
+        if (num % 2 === 0) {
+            document.writeln("Pair number!");
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>
