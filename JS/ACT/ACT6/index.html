@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - ACT6</title>
+</head>
+<body>
+    <script>
+        var n1 = prompt("Enter the first number (N1)");
+        var n2 = prompt("Enter the second number (N2)");
+        var mark1 = prompt("Enter the first mark");
+        var mark2 = prompt("Enter the second mark");
+        var mark3 = prompt("Enter the third mark");
+        var num = prompt("Enter a number");
+        var age = prompt("Enter your age");
+
+        n1 = parseInt(n1);
+        n2 = parseInt(n2);
+        mark1 = parseInt(mark1);
+        mark2 = parseInt(mark2);
+        mark3 = parseInt(mark3);
+        num = parseInt(num);
+        age = parseInt(age);
+
+        var avg = (mark1 + mark2 + mark3) / 3;
+
+        if (n1 > n2)
+            document.write(n1 + n2);
+        else
+            document.write(n2 - n1);
+
+        document.write("<br>");
+
+        document.write(avg >= 5 ? "You pass!" : "You fail!");
+
+        document.write("<br>");
+
+        if (num % 2 === 0) {
+            document.write("Pair Number");
+        } else {
+            document.write("Odd Number");
+        }
+
+        document.write("<br>");
+
+        document.write((age >= 18 && age <= 65) ? "Working Age" : "Not Working Age");
+    </script>
+</body>
+</html>
