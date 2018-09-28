@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - ACT9</title>
+</head>
+<body>
+    <script>
+        var word = prompt("Enter a word (house, table, dog or cat)");
+        var month1 = prompt("Enter the number of a month");
+        var month2 = prompt("Enter the number of a month");
+        var letter = prompt("Enter a letter");
+
+        month1 = parseInt(month1);
+        month2 = parseInt(month2);
+
+        switch (word.toLowerCase()) {
+            case "house":
+                document.write("Casa");
+                break;
+            case "table":
+                document.write("Mesa");
+                break;
+            case "dog":
+                document.write("Perro");
+                break;
+            case "cat":
+                document.write("Gato");
+                break;
+            default:
+                document.write("The word you entered is not valid");
+        }
+
+        document.write("<br>");
+
+        if (month1 > 0 && month1 <= 12) {
+            switch (month1) {
+                case 1:
+                    document.write("January");
+                    break;
+                case 2:
+                    document.write("February");
+                    break;
+                case 3:
+                    document.write("March");
+                    break;
+                case 4:
+                    document.write("April");
+                    break;
+                case 5:
+                    document.write("May");
+                    break;
+                case 6:
+                    document.write("June");
+                    break;
+                case 7:
+                    document.write("July");
+                    break;
+                case 8:
+                    document.write("August");
+                    break;
+                case 9:
+                    document.write("September");
+                    break;
+                case 10:
+                    document.write("October");
+                    break;
+                case 11:
+                    document.write("November");
+                    break;
+                case 12:
+                    document.write("December");
+                    break;
+            }
+        }
+
+        document.write("<br>");
+
+        if (month2 > 0 && month2 <= 12) {
+            switch (month2) {
+                case 2:
+                    document.write("28");
+                    break;
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    document.write("30");
+                    break;
+                default:
+                    document.write("31");
+            }
+        }
+
+        document.write("<br>");
+
+        if (letter.match("[a-zA-Z]")) {
+            switch (letter) {
+                case "a":
+                case "e":
+                case "i":
+                case "o":
+                case "u":
+                    document.write("Vowel");
+                    break;
+                default:
+                    document.write("Consonant");
+            }
+        }
+    </script>
+</body>
+</html>
