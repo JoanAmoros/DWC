@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - ACT11</title>
+</head>
+<body>
+    <script>
+        function hr() {
+            document.write("<hr>");
+        }
+        function br() {
+            document.write("<br>");
+        }
+        function w(string) {
+            document.write(string);
+        }
+
+        let num = 0, sum = 0;
+        do {
+            num = parseInt(prompt("Enter a number"));
+            sum += num;
+        } while (num !== 9999);
+        w("The sum is ");
+        w(sum);
+        if (sum > 0)
+            w(" (POSITIVE)");
+        else if (sum < 0)
+            w(" (NEGATIVE)");
+        else
+            w(" (ZERO)");
+        hr();
+        let people = [];
+        do {
+            num = parseInt(prompt("Enter the id"));
+            let name = prompt("Enter the name");
+            let gender = prompt("Enter the gender (m or f)");
+            let age = parseInt(prompt("Enter the age"));
+            people.push({id:num, name:name, gender:gender, age:age});
+        } while (num !== 0);
+        let youngest = 0, oldest = 0, f = 0, t = 0, m = 0;
+        for (let i = 0; i < people.length; i++) {
+            let p = people[i];
+            if (p.gender === "f") {
+                f++;
+                if (p.age < people[youngest].age)
+                    youngest = i;
+                if (p.age > people[oldest].age)
+                    oldest = i;
+            } else if (p.age >= 18 && p.age <= 65)
+                m++;
+            t++;
+        }
+        w("Total: " + t);
+        br();
+        w("Men: " + (t - f));
+        br();
+        w("Women: " + f);
+        br();
+        w("Men between 18 & 65: " + m);
+        br();
+        w("Name of oldest woman: " + people[oldest].name);
+        br();
+        w("ID of youngest woman: " + people[youngest].id);
+    </script>
+</body>
+</html>
