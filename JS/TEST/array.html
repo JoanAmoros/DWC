@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Array UL</title>
+    <style>
+        table, ul, input[type=text] {
+            width: 400px;
+        }
+
+        button {
+            width: 100%;
+        }
+    </style>
+    <script>
+        let array = ["Item 3", "Item 1", "Item 2"];
+
+        function display() {
+            let l = document.getElementById("list");
+            while (l.firstChild)
+                l.removeChild(l.firstChild);
+
+            for (let i = 0; i < array.length; i++)
+                l.innerHTML += "<li>" + array[i] + "</li>" + "\n";
+        }
+
+        function getValue() {
+            let t = document.getElementById("text");
+            let val = t.value;
+            t.value = "";
+            return val;
+        }
+
+        function sort() {
+            array.sort();
+            display();
+        }
+
+        function push() {
+            array.push(getValue());
+            display();
+        }
+
+        function pop() {
+            array.pop();
+            display();
+        }
+
+        function shift() {
+            array.shift();
+            display();
+        }
+
+        function unshift() {
+            array.unshift(getValue());
+            display();
+        }
+    </script>
+</head>
+<body onload="display()">
+    <input type="text" id="text" placeholder="Enter a word">
+    <table>
+        <tr>
+            <td><button onclick="shift()">SHIFT</button></td>
+            <td><button onclick="push()">PUSH</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="unshift()">UNSHIFT</button></td>
+            <td><button onclick="pop()">POP</button></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button onclick="sort()">SORT</button></td>
+        </tr>
+    </table>
+    <div>
+        <ul id="list">
+
+        </ul>
+    </div>
+</body>
+</html>

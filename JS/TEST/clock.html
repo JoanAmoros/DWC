@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Clock</title>
+    <style>
+        h1 {
+            margin: auto;
+        }
+    </style>
+    <script>
+        function f(time) {
+            return (time < 10) ? "0" + time : time;
+        }
+
+        function setTime() {
+            let date = new Date();
+            let h = f(date.getHours());
+            let m = f(date.getMinutes());
+            let s = f(date.getSeconds());
+            document.getElementById("demo").innerText = h + ":" + m + ":" + s;
+            t = setTimeout(function () {setTime()}, 500);
+        }
+    </script>
+</head>
+<body onload="setTime()">
+    <h1 id="demo"></h1>
+</body>
+</html>
