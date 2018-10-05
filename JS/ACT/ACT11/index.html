@@ -64,6 +64,16 @@
         w("Name of oldest woman: " + people[oldest].name);
         br();
         w("ID of youngest woman: " + people[youngest].id);
+        hr();
+        num = 0;
+        while (num < 5) {
+            let name = prompt("Enter the name");
+            let acc = prompt("Enter the account number");
+            let money = prompt("Enter the money");
+            w(name + " is the owner of  " + acc + " account with " + money + "€");
+            br();
+            num++;
+        }
     </script>
 </body>
 </html>
