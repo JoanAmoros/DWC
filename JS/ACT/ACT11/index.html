@@ -5,42 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS - ACT11</title>
+    <script type="text/javascript" src="../functions.js"></script>
 </head>
 <body>
     <script>
-        function hr() {
-            document.write("<hr>");
-        }
-        function br() {
-            document.write("<br>");
-        }
-        function w(string) {
-            document.write(string);
-        }
-
         let num = 0, sum = 0;
+        
         do {
-            num = parseInt(prompt("Enter a number"));
+            num = pp("Enter a number");
             sum += num;
         } while (num !== 9999);
+        
         w("The sum is ");
         w(sum);
+        
         if (sum > 0)
             w(" (POSITIVE)");
         else if (sum < 0)
             w(" (NEGATIVE)");
         else
             w(" (ZERO)");
+        
         hr();
+        
         let people = [];
+        
         do {
-            num = parseInt(prompt("Enter the id"));
-            let name = prompt("Enter the name");
-            let gender = prompt("Enter the gender (m or f)");
-            let age = parseInt(prompt("Enter the age"));
+            num = pp("Enter the id");
+            let name = p("Enter the name");
+            let gender = p("Enter the gender (m or f)");
+            let age = pp("Enter the age");
             people.push({id:num, name:name, gender:gender, age:age});
         } while (num !== 0);
+        
         let youngest = 0, oldest = 0, f = 0, t = 0, m = 0;
+        
         for (let i = 0; i < people.length; i++) {
             let p = people[i];
             if (p.gender === "f") {
@@ -53,25 +52,23 @@
                 m++;
             t++;
         }
-        w("Total: " + t);
-        br();
-        w("Men: " + (t - f));
-        br();
-        w("Women: " + f);
-        br();
-        w("Men between 18 & 65: " + m);
-        br();
-        w("Name of oldest woman: " + people[oldest].name);
-        br();
+        
+        wb("Total: " + t);
+        wb("Men: " + (t - f));
+        wb("Women: " + f);
+        wb("Men between 18 & 65: " + m);
+        wb("Name of oldest woman: " + people[oldest].name);
         w("ID of youngest woman: " + people[youngest].id);
+        
         hr();
+        
         num = 0;
+        
         while (num < 5) {
-            let name = prompt("Enter the name");
-            let acc = prompt("Enter the account number");
-            let money = prompt("Enter the money");
-            w(name + " is the owner of  " + acc + " account with " + money + "€");
-            br();
+            let name = p("Enter the name");
+            let acc = p("Enter the account number");
+            let money = pp("Enter the money");
+            wb(name + " is the owner of  " + acc + " account with " + money + "€");
             num++;
         }
     </script>

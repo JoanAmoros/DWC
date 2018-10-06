@@ -5,78 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS - ACT7</title>
+    <script type="text/javascript" src="../functions.js"></script>
 </head>
 <body>
     <script>
-        var num1 = prompt("Enter the first number");
-        var num2 = prompt("Enter the second number");
-        var num3 = prompt("Enter the third number");
-        var num4 = prompt("Enter the a number between 0 and 999");
-        var num5 = prompt("Enter a positive or negative number or 0");
+        let num1 = pp("Enter the first number");
+        let num2 = pp("Enter the second number");
+        let num3 = pp("Enter the third number");
+        let num4 = pp("Enter the a number between 0 and 999");
+        let num5 = pp("Enter a positive or negative number or 0");
 
-        num1 = parseInt(num1);
-        num2 = parseInt(num2);
-        num3 = parseInt(num3);
-        num4 = parseInt(num4);
-        num5 = parseInt(num5);
-
-        document.write("Biggest: ");
+        w("Biggest: ");
 
         if (num1 > num2) {
             if (num1 > num3) {
-                document.write(num1);
+                w(num1);
             }  else {
-                document.write(num3);
+                w(num3);
             }
         } else {
             if (num2 > num3) {
-                document.write(num2);
+                w(num2);
             } else {
-                document.write(num3);
+                w(num3);
             }
         }
 
-        document.write("<br>");
+        br();
 
-        document.write("Smallest: ");
+        w("Smallest: ");
 
         if (num1 < num2) {
             if (num1 < num3) {
-                document.write(num1);
+                w(num1);
             }  else {
-                document.write(num3);
+                w(num3);
             }
         } else {
             if (num2 < num3) {
-                document.write(num2);
+                w(num2);
             } else {
-                document.write(num3);
+                w(num3);
             }
         }
 
-        document.write("<br>");
-        document.write(num4 + " has ");
+        br();
+        w(num4 + " has ");
 
         if (num4 >= 100) {
-            document.write("3");
+            w("3");
         } else {
             if (num4 >= 10) {
-                document.write("2");
+                w("2");
             } else {
-                document.write("1");
+                w("1");
             }
         }
 
-        document.write(" digits");
-        document.write("<br>");
+        wb(" digits");
 
         if (num5 > 0) {
-            document.write("Positive");
+            w("Positive");
         } else {
             if (num5 < 0) {
-                document.write("Negative");
+                w("Negative");
             } else {
-                document.write("Zero");
+                w("Zero");
             }
         }
     </script>

@@ -5,96 +5,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS - ACT9</title>
+    <script type="text/javascript" src="../functions.js"></script>
 </head>
 <body>
     <script>
-        var word = prompt("Enter a word (house, table, dog or cat)");
-        var month1 = prompt("Enter the number of a month");
-        var month2 = prompt("Enter the number of a month");
-        var letter = prompt("Enter a letter");
-
-        month1 = parseInt(month1);
-        month2 = parseInt(month2);
+        let word = p("Enter a word (house, table, dog or cat)");
+        let month1 = pp("Enter the number of a month");
+        let month2 = pp("Enter the number of a month");
+        let letter = p("Enter a letter");
 
         switch (word.toLowerCase()) {
             case "house":
-                document.write("Casa");
+                w("Casa");
                 break;
             case "table":
-                document.write("Mesa");
+                w("Mesa");
                 break;
             case "dog":
-                document.write("Perro");
+                w("Perro");
                 break;
             case "cat":
-                document.write("Gato");
+                w("Gato");
                 break;
             default:
-                document.write("The word you entered is not valid");
+                w("The word you entered is not valid");
         }
 
-        document.write("<br>");
+        hr();
 
         if (month1 > 0 && month1 <= 12) {
             switch (month1) {
                 case 1:
-                    document.write("January");
+                    w("January");
                     break;
                 case 2:
-                    document.write("February");
+                    w("February");
                     break;
                 case 3:
-                    document.write("March");
+                    w("March");
                     break;
                 case 4:
-                    document.write("April");
+                    w("April");
                     break;
                 case 5:
-                    document.write("May");
+                    w("May");
                     break;
                 case 6:
-                    document.write("June");
+                    w("June");
                     break;
                 case 7:
-                    document.write("July");
+                    w("July");
                     break;
                 case 8:
-                    document.write("August");
+                    w("August");
                     break;
                 case 9:
-                    document.write("September");
+                    w("September");
                     break;
                 case 10:
-                    document.write("October");
+                    w("October");
                     break;
                 case 11:
-                    document.write("November");
+                    w("November");
                     break;
                 case 12:
-                    document.write("December");
+                    w("December");
                     break;
             }
         }
 
-        document.write("<br>");
+        hr();
 
         if (month2 > 0 && month2 <= 12) {
             switch (month2) {
                 case 2:
-                    document.write("28");
+                    w("28");
                     break;
                 case 4:
                 case 6:
                 case 9:
                 case 11:
-                    document.write("30");
+                    w("30");
                     break;
                 default:
-                    document.write("31");
+                    w("31");
             }
         }
 
-        document.write("<br>");
+        hr();
 
         if (letter.match("[a-zA-Z]")) {
             switch (letter) {
@@ -103,10 +101,10 @@
                 case "i":
                 case "o":
                 case "u":
-                    document.write("Vowel");
+                    w("Vowel");
                     break;
                 default:
-                    document.write("Consonant");
+                    w("Consonant");
             }
         }
     </script>

@@ -5,25 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS - ACT14</title>
+    <script type="text/javascript" src="../functions.js"></script>
 </head>
 <body>
     <script>
-        function hr() {
-            document.write("<hr>");
-        }
-        function br() {
-            document.write("<br>");
-        }
-        function w(string) {
-            document.write(string);
-        }
-        function p(string) {
-            return prompt(string);
-        }
-        function pp(string) {
-            return parseInt(prompt(string));
-        }
-
         class Addition {
             constructor(value1 = 0, value2 = 0) {
                 this.value1 = value1;
@@ -44,12 +29,12 @@
         }
 
         let a1 = new Addition(2, 3);
-        w(a1.result());
-        br();
+        wb(a1.result());
         let a2 = new Addition();
         a2.loadValue1(5);
         a2.loadValue2(89);
         w(a2.result());
+
         hr();
 
         class Person {
@@ -67,17 +52,18 @@
         }
 
         let c = new Company("Company 1", 67);
-        w("Top working age on " + c.name + " is " + c.topAgeWorkers);
-        br();
+        wb("Top working age on " + c.name + " is " + c.topAgeWorkers);
         let ableToWork = 0;
+
         for (let i = 0; i < 10; i++) {
             let age = Math.floor(Math.random() * 62) + 18;
             let p = new Person("Person " + (i +1), age);
-            w(p.name + " is " + p.age + " years old");
-            br();
+            wb(p.name + " is " + p.age + " years old");
+
             if (p.age <= c.topAgeWorkers)
                 ableToWork++;
         }
+
         w(ableToWork + " people are able to work in " + c.name);
     </script>
 </body>

@@ -5,47 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS - ACT6</title>
+    <script type="text/javascript" src="../functions.js"></script>
 </head>
 <body>
     <script>
-        var n1 = prompt("Enter the first number (N1)");
-        var n2 = prompt("Enter the second number (N2)");
-        var mark1 = prompt("Enter the first mark");
-        var mark2 = prompt("Enter the second mark");
-        var mark3 = prompt("Enter the third mark");
-        var num = prompt("Enter a number");
-        var age = prompt("Enter your age");
+        let n1 = pp("Enter the first number (N1)");
+        let n2 = pp("Enter the second number (N2)");
+        let mark1 = pp("Enter the first mark");
+        let mark2 = pp("Enter the second mark");
+        let mark3 = pp("Enter the third mark");
+        let num = pp("Enter a number");
+        let age = pp("Enter your age");
 
-        n1 = parseInt(n1);
-        n2 = parseInt(n2);
-        mark1 = parseInt(mark1);
-        mark2 = parseInt(mark2);
-        mark3 = parseInt(mark3);
-        num = parseInt(num);
-        age = parseInt(age);
-
-        var avg = (mark1 + mark2 + mark3) / 3;
+        let avg = (mark1 + mark2 + mark3) / 3;
 
         if (n1 > n2)
-            document.write(n1 + n2);
+            wb(n1 + n2);
         else
-            document.write(n2 - n1);
+            wb(n2 - n1);
 
-        document.write("<br>");
-
-        document.write(avg >= 5 ? "You pass!" : "You fail!");
-
-        document.write("<br>");
+        wb(avg >= 5 ? "You pass!" : "You fail!");
 
         if (num % 2 === 0) {
-            document.write("Pair Number");
+            wb("Pair Number");
         } else {
-            document.write("Odd Number");
+            wb("Odd Number");
         }
 
-        document.write("<br>");
-
-        document.write((age >= 18 && age <= 65) ? "Working Age" : "Not Working Age");
+       w((age >= 18 && age <= 65) ? "Working Age" : "Not Working Age");
     </script>
 </body>
 </html>

@@ -5,74 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS - ACT8</title>
+    <script type="text/javascript" src="../functions.js"></script>
 </head>
 <body>
     <script>
-        var day = prompt("Enter a day");
-        var month = prompt("Enter a month");
-        var year = prompt("Enter a year");
-        var num1 = prompt("Enter the first number");
-        var num2 = prompt("Enter the second number");
-        var num3 = prompt("Enter the third number");
-        var x = prompt("Enter the X coordinate");
-        var y = prompt("Enter the Y coordinate");
-        var salary = prompt("Enter the salary");
-        var years = prompt("Enter the years in the company");
-        var num4 = prompt("Enter the first number");
-        var num5 = prompt("Enter the second number");
-        var num6 = prompt("Enter the third number");
-        
-        day = parseInt(day);
-        month = parseInt(month);
-        year = parseInt(year);
-        num1 = parseInt(num1);
-        num2 = parseInt(num2);
-        num3 = parseInt(num3);
-        x = parseInt(x);
-        y = parseInt(y);
-        salary = parseInt(salary);
-        years = parseInt(years);
-        num4 = parseInt(num4);
-        num5 = parseInt(num5);
-        num6 = parseInt(num6);
+        let day = pp("Enter a day");
+        let month = pp("Enter a month");
+        let year = pp("Enter a year");
+        let num1 = pp("Enter the first number");
+        let num2 = pp("Enter the second number");
+        let num3 = pp("Enter the third number");
+        let x = pp("Enter the X coordinate");
+        let y = pp("Enter the Y coordinate");
+        let salary = pp("Enter the salary");
+        let years = pp("Enter the years in the company");
+        let num4 = pp("Enter the first number");
+        let num5 = pp("Enter the second number");
+        let num6 = pp("Enter the third number");
         
         if (day === 24 && month === 12 && year === new Date().getFullYear()) {
-            document.write("Today is Christmas!");
-            document.write("<br>");
+            wb("Today is Christmas!");
         }
 
         if (num1 < 10 && num2 < 10 && num3 < 10) {
-            document.write("All the numbers are less than 10");
-            document.write("<br>");
+            wb("All the numbers are less than 10");
         }
 
         if (x > 0 && y > 0) {
-            document.write("First Quadrant");
+            w("First Quadrant");
         } else if (x < 0 && y > 0) {
-            document.write("Second Quadrant");
+            w("Second Quadrant");
         } else if (x < 0 && y < 0) {
-            document.write("Third Quadrant");
+            w("Third Quadrant");
         } else if (x > 0 && y < 0) {
-            document.write("Fourth Quadrant");
+            w("Fourth Quadrant");
         } else {
-            document.write("Unknown Quadrant");
+            w("Unknown Quadrant");
         }
 
-        document.write("<br>");
+        br();
 
         if (salary < 500 && years >= 10) {
-            document.write(salary * 1.2);
+            w(salary * 1.2);
         } else if (salary < 500 && years < 10) {
-            document.write(salary * 1.05);
+            w(salary * 1.05);
         } else {
-            document.write(salary);
+            w(salary);
         }
 
-        document.write("<br>");
+        br();
 
         if (num4 < 10 || num5 < 10 || num6 < 10) {
-            document.write("Some numbers are less than 10");
-            document.write("<br>");
+            w("Some numbers are less than 10");
         }
     </script>
 </body>

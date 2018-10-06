@@ -5,25 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS - ACT13</title>
+    <script type="text/javascript" src="../functions.js"></script>
 </head>
 <body>
     <script>
-        function hr() {
-            document.write("<hr>");
-        }
-        function br() {
-            document.write("<br>");
-        }
-        function w(string) {
-            document.write(string);
-        }
-        function p(string) {
-            return prompt(string);
-        }
-        function pp(string) {
-            return parseInt(prompt(string));
-        }
-
         function min(num1, num2, num3) {
             return (num1 <= num2 && num1 <= num3) ? num1 :
                 (num2 <= num1 && num2 <= num3) ? num2 :
@@ -36,6 +21,7 @@
 
         function order(num1, num2, num3) {
             let nums = [num1, num2, num3];
+
             for (let i = 0; i < nums.length; i++) {
                 for (let j = 1; j < nums.length; j++) {
                     if (nums[j] < nums[j - 1]) {
@@ -47,8 +33,7 @@
             }
 
             for (let i = 0; i < nums.length; i++) {
-                w(nums[i]);
-                br();
+                wb(nums[i]);
             }
         }
 

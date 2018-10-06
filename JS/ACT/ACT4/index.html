@@ -5,39 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS - ACT4</title>
+    <script type="text/javascript" src="../functions.js"></script>
 </head>
 <body>
     <script>
-        var sideLength = prompt("Enter the length of the side of the square");
-        var num1 = prompt("Enter the first number");
-        var num2 = prompt("Enter the second number");
-        var num3 = prompt("Enter the third number");
-        var num4 = prompt("Enter the fourth number");
-        var price1 = prompt("Enter the price of the first product");
-        var quantity1 = prompt("Enter the quantity of the first product");
-        var price2 = prompt("Enter the price of the second product");
-        var quantity2 = prompt("Enter the quantity of the second product");
-        var base = prompt("Enter the base of the triangle");
-        var height = prompt("Enter the height of the triangle");
+        let sideLength = pp("Enter the length of the side of the square");
+        let num1 = pp("Enter the first number");
+        let num2 = pp("Enter the second number");
+        let num3 = pp("Enter the third number");
+        let num4 = pp("Enter the fourth number");
+        let price1 = pp("Enter the price of the first product");
+        let quantity1 = pp("Enter the quantity of the first product");
+        let price2 = pp("Enter the price of the second product");
+        let quantity2 = pp("Enter the quantity of the second product");
+        let base = pp("Enter the base of the triangle");
+        let height = pp("Enter the height of the triangle");
 
-        num1 = parseInt(num1);
-        num2 = parseInt(num2);
-        num3 = parseInt(num3);
-        num4 = parseInt(num4);
-        var sum = num1 + num2 + num3 + num4;
-        var prod = num1 * num2 * num3 * num4;
-        var bill = parseInt(price1) * parseInt(quantity1) + parseInt(price2) * parseInt(quantity2);
-        var area = (parseInt(base) * parseInt(height)) / 2;
+        let sum = num1 + num2 + num3 + num4;
+        let prod = num1 * num2 * num3 * num4;
+        let bill = price1 * quantity1 + price2 * quantity2;
+        let area = (base * height) / 2;
 
-        document.write("The perimeter of the square is " + (parseInt(sideLength) * 4));
-        document.write("<hr>");
-        document.write("The sum of the numbers is " + sum);
-        document.write("<br>");
-        document.write("The product of the numbers is " + prod);
-        document.write("<hr>");
-        document.write("The total price of the bill is " + bill);
-        document.write("<hr>");
-        document.write("The area of the triangle is " + area);
+        w("The perimeter of the square is " + (sideLength * 4));
+        hr();
+        wb("The sum of the numbers is " + sum);
+        w("The product of the numbers is " + prod);
+        hr();
+        w("The total price of the bill is " + bill);
+        hr();
+        w("The area of the triangle is " + area);
     </script>
 </body>
 </html>
