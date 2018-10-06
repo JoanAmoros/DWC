@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - ACT23</title>
+    <script type="text/javascript" src="../functions.js"></script>
+</head>
+<body>
+    <form action="#" onsubmit="sport()">
+        <input type="checkbox" value="Football" id="c1">
+        <label for="c1">Football</label>
+        <input type="checkbox" value="Tennis" id="c2">
+        <label for="c2">Tennis</label>
+        <input type="checkbox" value="Karate" id="c3">
+        <label for="c3">Karate</label>
+        <input type="submit" value="Calculate">
+    </form>
+    <script>
+        function sport() {
+            let c = document.querySelectorAll("input[type=checkbox]:checked");
+            let sel = [];
+
+            for (let i = 0; i < c.length; i++)
+                sel.push(c[i].value);
+
+            alert(sel.toString());
+        }
+    </script>
+</body>
+</html>
