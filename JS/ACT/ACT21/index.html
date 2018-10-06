@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - ACT21</title>
+    <script type="text/javascript" src="../functions.js"></script>
+</head>
+<body>
+    <form action="#" onsubmit="verify()">
+        <input type="password" id="pass1" placeholder="Enter your password">
+        <input type="password" id="pass2" placeholder="Repeat your password">
+        <input type="submit" value="Verify">
+    </form>
+    <script>
+        function verify() {
+            let pass1 = document.getElementById("pass1");
+            let pass2 = document.getElementById("pass2");
+            if (pass1.value === pass2.value)
+                alert("Passwords match!");
+            else
+                alert("Password don't match!");
+            pass1.value = "";
+            pass2.value = "";
+        }
+    </script>
+</body>
+</html>
