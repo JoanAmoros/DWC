@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - ACT16</title>
+    <script type="text/javascript" src="../functions.js"></script>
+</head>
+<body>
+    <script>
+        let arr1 = [];
+
+        for (let i = 0; i < 8; i++)
+            arr1.push(Math.floor(Math.random() * 10));
+
+        let sum = 0, sum5 = 0, count5 = 0;
+
+        for (let i = 0; i < arr1.length; i++) {
+            let n = arr1[i];
+            sum += n;
+            if (n > 5) {
+                sum5 += 5;
+                count5++;
+            }
+        }
+
+        wb("Sum: " + sum);
+        wb("AVG: " + (sum / 8));
+        wb("Sum of numbers higher than 5: " + sum5);
+        w("Numbers higher than 5: " + count5);
+
+        hr();
+
+        let len = pp("Enter the length of the array");
+        let vals = [];
+        let array = [];
+        sum = 0;
+
+        for (let i = 0; i < 2; i++)
+            vals.push(pp("Enter the value number " + (i + 1)));
+
+        for (let i = 0; i < len; i++) {
+            let num = vals[i % 2];
+            sum += num;
+            array.push(num);
+        }
+
+        wb(array.toString());
+        w("The sum is " + sum);
+    </script>
+</body>
+</html>
