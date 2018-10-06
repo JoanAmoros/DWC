@@ -118,7 +118,10 @@
                 sum += m;
                 marks[c].push(m);
             }
-            avg.push(sum / st[c]);
+            let a = sum / st[c];
+            avg.push(a);
+            w("Avg for class " + cn[c] + ": " + a);
+            br();
         }
         w("The class with greatest grades is class ");
         if (avg[0] > avg[1] && avg[0] > avg[2])
