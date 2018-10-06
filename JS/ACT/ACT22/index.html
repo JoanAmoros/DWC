@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - ACT22</title>
+    <script type="text/javascript" src="../functions.js"></script>
+</head>
+<body>
+    <select title="Pizzas" id="pizzas" onchange="pizza()">
+        <option value="6">Pepperoni</option>
+        <option value="5">Quatro Formaggi</option>
+        <option value="4">Procciuto</option>
+    </select>
+    <p id="pizza-cost"></p>
+    <hr>
+    <form action="#" onsubmit="pc()">
+        <select title="CPU" id="cpu">
+            <option value="400">Intel i3</option>
+            <option value="600">Intel i5</option>
+            <option value="800">Intel i7</option>
+        </select>
+        <select title="Monitor" id="mon">
+            <option value="250">Samsung 20'</option>
+            <option value="350">Samsung 22'</option>
+            <option value="550">Samsung 26'</option>
+        </select>
+        <select title="HDD" id="hdd">
+            <option value="300">500GB</option>
+            <option value="440">1TB</option>
+            <option value="500">3TB</option>
+        </select>
+        <input type="submit" value="Calculate">
+    </form>
+    <p id="pc-cost"></p>
+    <hr>
+    <form action="#" onsubmit="pizza2()">
+        <select title="Pizzas" id="pizzas2">
+            <option value="6">Pepperoni</option>
+            <option value="5">Quatro Formaggi</option>
+            <option value="4">Procciuto</option>
+        </select>
+        <input type="number" id="qty" placeholder="Number of pizzas">
+        <input type="submit" value="Calculate">
+    </form>
+    <p id="pizza2-cost"></p>
+    <hr>
+    <form action="#" onsubmit="exam()">
+        <select id="q1" title="Question 1">
+            <option value="true">Answer 1</option>
+            <option value="false">Answer 2</option>
+            <option value="false">Answer 3</option>
+            <option value="false">Answer 4</option>
+        </select>
+        <select id="q2" title="Question 2">
+            <option value="false">Answer 1</option>
+            <option value="true">Answer 2</option>
+            <option value="false">Answer 3</option>
+            <option value="false">Answer 4</option>
+        </select>
+            <select id="q3" title="Question 3">
+            <option value="false">Answer 1</option>
+            <option value="false">Answer 2</option>
+            <option value="true">Answer 3</option>
+            <option value="false">Answer 4</option>
+        </select>
+            <select id="q4" title="Question 4">
+            <option value="false">Answer 1</option>
+            <option value="false">Answer 2</option>
+            <option value="false">Answer 3</option>
+            <option value="true">Answer 4</option>
+        </select>
+        <input type="submit" value="Calculate">
+    </form>
+    <script>
+        function pizza() {
+            let pizzas = document.getElementById("pizzas");
+            let cost = document.getElementById("pizza-cost");
+            let val = pizzas.options[pizzas.selectedIndex];
+            cost.innerText = val.text + " costs " + val.value + "€";
+        }
+
+        function pc() {
+            let cpu = document.getElementById("cpu");
+            cpu = parseInt(cpu.options[cpu.selectedIndex].value);
+            let mon = document.getElementById("mon");
+            mon = parseInt(mon.options[mon.selectedIndex].value);
+            let hdd = document.getElementById("hdd");
+            hdd = parseInt(hdd.options[hdd.selectedIndex].value);
+            let cost = document.getElementById("pc-cost");
+            cost.innerText = (cpu + mon + hdd) + "€";
+        }
+
+        function pizza2() {
+            let pizzas = document.getElementById("pizzas2");
+            let qty = document.getElementById("qty");
+            let cost = document.getElementById("pizza2-cost");
+            let val = pizzas.options[pizzas.selectedIndex];
+            cost.innerText = qty.value + " " + val.text + " cost " + (qty.value * val.value) + "€";
+        }
+
+        function exam() {
+            let q1 = document.getElementById("q1");
+            q1 = q1.options[q1.selectedIndex].value;
+            let q2 = document.getElementById("q2");
+            q2 = q2.options[q2.selectedIndex].value;
+            let q3 = document.getElementById("q3");
+            q3 = q3.options[q3.selectedIndex].value;
+            let q4 = document.getElementById("q4");
+            q4 = q4.options[q4.selectedIndex].value;
+            let right = 0;
+            if (q1 === "true")
+                right++;
+            if (q2 === "true")
+                right++;
+            if (q3 === "true")
+                right++;
+            if (q4 === "true")
+                right++;
+            alert("You got a " + (right / 4 * 10));
+        }
+    </script>
+</body>
+</html>
