@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - ACT12</title>
+</head>
+<body>
+    <script>
+        function hr() {
+            document.write("<hr>");
+        }
+        function br() {
+            document.write("<br>");
+        }
+        function w(string) {
+            document.write(string);
+        }
+        function p(string) {
+            return prompt(string);
+        }
+        function pp(string) {
+            return parseInt(prompt(string));
+        }
+
+        for (let i = 0; i < 3; i++) {
+            let b = pp("Enter the base of triangle " + (i + 1));
+            let h = pp("Enter the height of triangle" + (i + 1));
+            w("Area of triangle " + (i + 1) + ": " + (b * h / 2));
+            br();
+        }
+        hr();
+        let sum = 0;
+        for (let i = 0; i < 10; i++) {
+            let num = pp("Enter a number");
+            if (i > 4)
+                sum += num;
+        }
+        w("The sum of the last 5 numbers is " + sum);
+        hr();
+        for (let i = 1, num = 5; i <= 10; i++) {
+            w(num + " * " + i + " = " + (i * num));
+            br()
+        }
+        hr();
+        let num = pp("Enter a number");
+        for (let i = 1; i <= 10; i++) {
+            w(num + " * " + i + " = " + (i * num));
+            br()
+        }
+        hr();
+        let e = 0, is = 0, s = 0;
+        for (let i = 0; i < 4; i++) {
+            let sides = [];
+            for (let j = 0; j < 3; j++) {
+                sides[j] = pp("Enter the side " + (j + 1) + " of triangle " + (i + 1));
+            }
+            w("Triangle " + (i + 1) + " is ");
+            if (sides[0] === sides[1] && sides[0] === sides[2]) {
+                e++;
+                w("equilateral");
+            } else if (sides[0] !== sides[1] && sides[1] !== sides[2] && sides[0] !== sides[2]) {
+                s++;
+                w("scalene");
+            } else {
+                is++;
+                w("isosceles");
+            }
+            br();
+        }
+        w("Total equilateral: " + e);
+        br();
+        w("Total isosceles: " + is);
+        br();
+        w("Total scalene: " + s);
+        br();
+        let type;
+        if (e >= is && e >= s)
+            type = "equilateral";
+        else if (is >= e && is >= s)
+            type = "isosceles";
+        else
+            type = "scalene";
+        w("There are more " + type + " triangles");
+        hr();
+        let odd = 0, pos = 0, neg = 0, sumPair = 0;
+        for (let i = 0; i < 10; i++) {
+            let num = pp("Enter a number");
+            if (num % 2 === 0)
+                sumPair += num;
+            else
+                odd++;
+            if (num >= 0)
+                pos++;
+            else
+                neg++;
+        }
+        w(pos + " positive numbers");
+        br();
+        w(neg + " negative numbers");
+        br();
+        w(odd + " odd numbers");
+        br();
+        w((10 - odd) + " pair numbers");
+        br();
+        w("The sum of the pair numbers is " + sumPair);
+        hr();
+        let marks = [];
+        let cn = ["A", "B", "C"];
+        let st = [5, 6, 11];
+        let avg = [];
+        for (let c = 0; c < 3; c++) {
+            let sum = 0;
+            marks[c] = [];
+            for (let i = 0; i < st[c]; i++) {
+                let m = pp("Enter the mark of student " + (i + 1) + " from class " + cn[c]);
+                sum += m;
+                marks[c].push(m);
+            }
+            avg.push(sum / st[c]);
+        }
+        w("The class with greatest grades is class ");
+        if (avg[0] > avg[1] && avg[0] > avg[2])
+            w(cn[0]);
+        else if (avg[1] > avg[0] && avg[1] > avg[2])
+            w(cn[1]);
+        else
+            w(cn[2]);
+        hr();
+    </script>
+</body>
+</html>
