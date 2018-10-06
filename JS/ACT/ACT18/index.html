@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - ACT18</title>
+    <script type="text/javascript" src="../functions.js"></script>
+</head>
+<body>
+    <script>
+        let i = 0;
+
+        while (true) {
+            let name = p("Enter a name");
+
+            if (name.toLowerCase() === "end")
+                break;
+            else
+                i++;
+        }
+
+        w("You entered " + i + " names");
+
+        hr();
+
+        let haystack = "This is a sample text";
+        let needle = "text";
+
+        let index = haystack.indexOf(needle) !== -1;
+
+
+        if (index !== -1)
+            wb("'" + haystack + "' contain '" + needle + "' at position " + index);
+        else
+            wb("'" + haystack + "' doesn't contain '" + needle + "'");
+
+        hr();
+
+        function isPalindrome(word) {
+            for (let j = 0, k = word.length - 1; j <= k; j++, k--)
+                if (word.charAt(j) !== word.charAt(k))
+                    return false;
+            return true;
+        }
+
+        let word = p("Enter a word");
+
+        w("Is '" + word + "' a palindrome? " + (isPalindrome(word) ? "Yes" : "No"));
+
+        hr();
+
+        let email = p("Enter an email address");
+
+        w("Does '" + email + "' contain an @? " + (email.indexOf("@") !== -1 ? "Yes" : "No"));
+
+        hr();
+
+        word = p("Enter a word");
+        let len = word.length;
+        let vowels = 0;
+
+        for (let j = 0; j < len / 2; j++)
+            w(word.charAt(j));
+
+        br();
+
+        wb(word.charAt(len - 1));
+
+        for (let j = len - 1; j >= 0; j--)
+            w(word.charAt(j));
+
+        br();
+
+        for (let j = 0; j < len; j++) {
+            let c = word.charAt(j);
+            if (c.match("[aeiou]"))
+                vowels++;
+            w(c + " ");
+        }
+
+        br();
+
+        w(word + " has " + vowels + " vowels");
+
+        hr();
+
+        let phrase = p("Enter a phrase");
+        phrase = phrase.replace(/ /g, "<br>");
+        w(phrase);
+    </script>
+</body>
+</html>
