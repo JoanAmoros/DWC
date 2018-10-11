@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - ACT25</title>
+    <script type="text/javascript" src="../functions.js"></script>
+</head>
+<body>
+    <form action="#" onsubmit="showInfo()">
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="email" placeholder="Email">
+        <label for="comment">Comment:</label>
+        <textarea id="comment">
+
+        </textarea>
+        <input type="submit" value="Show info">
+    </form>
+    <script>
+        function showInfo() {
+            let n = document.getElementById("name");
+            let e = document.getElementById("email");
+            let c = document.getElementById("comment");
+
+            alert(
+                "Name: " + n.value + "\n" +
+                "Email: " + e.value + "\n" +
+                "Comment: " + c.value
+            );
+
+            n.value = "";
+            e.value = "";
+            c.value = "";
+        }
+    </script>
+</body>
+</html>
