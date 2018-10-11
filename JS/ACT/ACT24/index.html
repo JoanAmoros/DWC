@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - ACT24</title>
+    <script type="text/javascript" src="../functions.js"></script>
+</head>
+<body>
+    <form action="#" onsubmit="checkAge()">
+        <input type="radio" name="age" id="y18" checked>
+        <label for="y18">Younger than 18</label>
+        <input type="radio" name="age" id="o18">
+        <label for="o18">Older than 18</label>
+        <input type="submit" value="Check">
+    </form>
+    <script>
+        function checkAge() {
+            let y18 = document.getElementById("y18").checked;
+            let o18 = document.getElementById("o18").checked;
+
+            if (!y18 && !o18) {
+                alert("You must select an option");
+                return;
+            }
+
+            alert(y18 ? "You can't enter the site" : "You can enter the site");
+        }
+    </script>
+</body>
+</html>
