@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery - ACT2</title>
+</head>
+<body>
+    <table>
+        <tr id="tr1">
+            <td>row 1</td>
+        </tr>
+        <tr id="tr2">
+            <td>row 2</td>
+        </tr>
+    </table>
+<script src="../../jquery-3.3.1.min.js"></script>
+<script>
+    $("#tr1").click(function() {
+        $(this).css("background", "lightblue")
+    });
+    $("#tr2").click(function() {
+        $(this).css("background", "lightgreen")
+    });
+</script>
+</body>
+</html>
