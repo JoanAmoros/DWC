@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jquery Test</title>
+</head>
+<body>
+    <button>Hide Ps</button>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, eveniet? Perferendis reiciendis quaerat neque, accusamus labore quis quam voluptate sit illo. Veritatis quis laudantium velit quo dolor. Omnis facere perspiciatis magni quae, tempore labore rerum quia ea similique itaque impedit aperiam doloremque optio officia voluptas porro odio nesciunt ad. Ad.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo consequatur magnam eaque eos consequuntur placeat! Commodi, dignissimos id amet nihil esse in non, ab obcaecati officiis animi possimus?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis veniam ipsam ipsum.</p>
+
+<script src="../jquery-3.3.1.min.js"></script>
+<script>
+    $(function() {
+
+
+        $("button").click(function (e) { 
+            $("p").slideUp("slow");
+        });
+
+        $("p").dblclick(function () {
+            $(this).show(5000);
+        });
+    });
+</script>
+</body>
+</html>
