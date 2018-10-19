@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery - ACT5</title>
+</head>
+<body>
+    <h1>Lorem ipsum dolor sit.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam repudiandae voluptatum doloribus minus? Magnam, nulla!</p>
+    <h1>Lorem ipsum dolor sit amet.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum quasi recusandae harum!</p>
+    <h1>Lorem ipsum dolor sit.</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos quos iure commodi eaque similique!</p>
+    <h1>Lorem ipsum dolor sit amet consectetur.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, consequatur.</p>
+    <h1>Lorem, ipsum dolor.</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste vel ullam similique dolore voluptas nam soluta aperiam. Ea impedit maxime saepe.</p>
+    <div>
+        <button fontSize="10px">Small</button>
+        <button fontSize="15px">Medium</button>
+        <button fontSize="20px">Big</button>
+    </div>
+<script src="../../jquery-3.3.1.min.js"></script>
+<script>
+    $("button").click(function (e) {
+        let fontSize = $(e.target).attr("fontSize");
+        $("p:odd").css("fontSize", fontSize);
+    });
+</script>
+</body>
+</html>
