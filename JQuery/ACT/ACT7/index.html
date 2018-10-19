@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery - ACT7</title>
+</head>
+<body>
+    <a id="link1" href="">Link</a>
+    <br>
+    <button link="https://google.com">Link 1</button>
+    <button link="https://youtube.com">Link 2</button>
+    <button link="https://twitter.com">Link 3</button>
+<script src="../../jquery-3.3.1.min.js"></script>
+<script>
+    $("button").click(function () { 
+        $("#link1").attr("href", $(this).attr("link"));
+    });
+</script>
+</body>
+</html>
