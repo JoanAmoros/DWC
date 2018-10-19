@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery - ACT6</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>OFF</td>
+        </tr>
+        <tr>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>OFF</td>
+        </tr>
+        <tr>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>OFF</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>OFF</td>
+        </tr>
+        <tr>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>OFF</td>
+        </tr>
+        <tr>
+            <td>OFF</td>
+            <td>OFF</td>
+            <td>OFF</td>
+        </tr>
+    </table>
+    <button id="btn1">Change</button>
+<script src="../../jquery-3.3.1.min.js"></script>
+<script>
+    $("#btn1").click(function() {
+        $("table").first().find("td").text("ON");
+    });
+</script>
+</body>
+</html>
