@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery - ACT23</title>
+</head>
+<body>
+    <a href="http://iesmanacor.cat">IES Manacor</a>
+    <a href="https://google.es">Google</a>
+    <a href="https://youtube.com">YouTube</a>
+    <a href="https://amazon.es">Amazon</a>
+    <a href="https://jamoros.tech">Jamoros</a>
+
+<script src="../../jquery-3.3.1.min.js"></script>
+<script>
+    $("a").each(function () {
+        if ($(this).attr('href').indexOf('.es') > -1)
+            $(this).css("background", "#ffff99");
+    });
+</script>
+</body>
+</html>
