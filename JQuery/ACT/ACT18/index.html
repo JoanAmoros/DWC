@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery - ACT18</title>
+</head>
+<body>
+    <table id="table">
+        <tr id="last">
+            <td colspan="2" style="text-align: center;">
+                <button id="add">Add</button>
+            </td>
+        </tr>
+    </table>
+<script src="../../jquery-3.3.1.min.js"></script>
+<script>
+    $("#add").click(function () {
+        let t;
+        let elem =
+        $('<tr class="row">');
+        t = $('<td>').append($('<input type="text" placeholder="Input">'))
+        elem.append(t);
+        t = $('<td>').append($('<button class="del">Delete</button>').click(del));
+        elem.append(t);
+        $("#last").before(elem);
+    });
+
+    function del() {
+        $(this).parentsUntil(".row").parent().remove();
+    }
+</script>
+</body>
+</html>
