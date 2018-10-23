@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery - ACT13</title>
+    <style>
+        #div {
+            width: 200px;
+            height: 200px;
+            border: 2px solid aqua;
+        }
+    </style>
+</head>
+<body>
+    <p id="text">P</p>
+    <div id="div"></div>
+<script src="../../jquery-3.3.1.min.js"></script>
+<script>
+    $(document).mousemove((e) => {
+        $("#text").text(
+            e.target.id == "div" ?
+            "x: " + e.clientX +
+            "\t" +
+            "y: " + e.clientY :
+            "Mouse outside div"
+        );
+    });
+</script>
+</body>
+</html>
