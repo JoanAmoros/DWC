@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery - ACT14</title>
+</head>
+<body>
+    <button>Button 1</button>
+    <button>Button 2</button>
+<script src="../../jquery-3.3.1.min.js"></script>
+<script>
+    $("button")
+        .mouseup(function () {
+            $(this).css({"background": "#ddd", "border-color": "#ddd"})
+        })
+        .mousedown(function () {
+            $(this).css({"background": "aqua", "border-color": "aqua"})
+        });
+</script>
+</body>
+</html>
