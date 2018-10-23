@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery - ACT16</title>
+    <style>
+        input[type=text] {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" value="Input 1">
+    <input type="text" value="Input 2">
+<script src="../../jquery-3.3.1.min.js"></script>
+<script>
+    $("input[type=text]").focus(function () {
+        $(this).css("color", "red");
+    });
+    $("input[type=text]").blur(function () {
+        $(this).css("color", "blue");
+    });
+</script>
+</body>
+</html>
