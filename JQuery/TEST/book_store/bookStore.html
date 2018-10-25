@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Book Store</title>
+    <style>
+        th {
+            padding: 10px;
+        }
+
+        td {
+            padding: 20px;
+        }
+
+        table, tr, td, th {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <label for="title">Title</label>
+    <input type="text" id="title">
+    <br>
+    <label for="pages">Pages</label>
+    <input type="number" id="pages">
+    <br>
+    <label for="cat">Category</label>
+    <select id="cat">
+        <option value="classic">Classic</option>
+        <option value="comedy">Comedy</option>
+        <option value="science">Science-Fiction</option>
+        <option value="sports">Sports</option>
+    </select>
+    <br>
+    <label for="rows">Row</label>
+    <select id="rows"></select>
+    
+    <label for="cols">Column</label>
+    <select id="cols"></select>
+    <br>
+    <button id="add">Add Book</button>
+    <button id="remove">Remove Book</button>
+    <button id="dispTable">View Table</button>
+    <button id="dispList">View List</button>
+    <button id="count">Count Books</button>
+    <br>
+    <hr>
+    <div id="content"></div>
+
+    <script src="../../jquery-3.3.1.min.js"></script>
+    <script>
+        const rows = 3, cols = 3;
+
+        const library = [];
+        
+        const content = $("#content");
+
+        let tableVisible = true;
+        let displaying;
+
+        class Book {
+            constructor(title, pages, cat, row, col) {
+                this.title = title;
+                this.pages = pages;
+                this.cat = cat;
+                this.row = row;
+                this.col = col;
+            }
+
+            toString() {
+                return "Title: " + this.title + ", Pages: " + this.pages + ", Category: " + this.cat + ", Row: " + this.row + ", Column: " + this.col;
+            }
+        }
+
+        function addBook(title, pages, cat, row, col) {
+            library.push(new Book(title, pages, cat, row, col));
+            display();
+        }
+
+        function deleteBook(row, col) {
+            for (let i = 0; i < library.length; i++) {
+                let book = library[i];
+                if (book.row === row && book.col === col)
+                    library.splice(i, 1);
+            }
+            display();
+        }
+
+        function display() {
+            tableVisible ? displayTable() : displayList();
+        }
+
+        function displayTable() {
+            if (displaying) {
+                displaying.remove();
+            }
+            tableVisible = true;
+            let tableE = $('<table>', {id: 'table'});
+            let headerE = $('<tr>').append('<th>');
+            for (let row = 0; row < rows; row++) {
+                let rowE = $('<tr>');
+                rowE.append($('<th>', {text: row + 1}));
+                for (let col = 0; col < cols; col++) {
+                    let colE = $('<td>', {style: 'text-align: center;'});
+                    let imgE = $('<img>', {src: 'empty.png', width: '60'});
+                    let titleE = $('<p>', {text: 'empty'});
+                    let pagesE = $('<small>', {text: 0});
+                    colE.append(imgE, titleE, pagesE);
+                    rowE.append(colE);
+                }
+                tableE.append(rowE);
+            }
+
+            for (let c = 0; c < cols; c++) {
+                headerE.append($('<th>', {text: c + 1}));
+            }
+
+            tableE.prepend(headerE);
+
+            for (const book of library) {
+                let row = book.row + 2;
+                let col = book.col + 1;
+                let r = tableE.find('tr:nth-of-type(' + row + ')');
+                let c = r.find('td:nth-of-type(' + col + ')');
+                c.find('img').attr('src', book.cat + '.png');
+                c.find('p').text(book.title);
+                c.find('small').text(book.pages);
+            }
+            displaying = tableE;
+            content.append(tableE);
+        }
+
+        function displayList() {
+            tableVisible = false;
+            if (displaying) {
+                displaying.remove();
+            }
+            let listE = $('<ol>');
+            for (const book of library) {
+                let liE = $('<li>', {text: book.toString()});
+                listE.append(liE);
+            }
+            displaying = listE;
+            content.append(listE);
+        }
+
+        $("#add").click(() => {
+            let title = $("#title").val();
+            let pages = $("#pages").val();
+            let cat = $("#cat :selected").val();
+            let row = parseInt($("#rows :selected").val());
+            let col = parseInt($("#cols :selected").val());
+
+            addBook(title, pages, cat, row, col);
+        });
+
+        $("#remove").click(function() {
+            let row = parseInt($("#rows :selected").val());
+            let col = parseInt($("#cols :selected").val());
+            deleteBook(row, col);
+        });
+
+        $("#dispTable").click(function() {
+            displayTable();
+        });
+
+        $("#dispList").click(function() {
+            displayList();
+        });
+
+        $("#count").click(function() {
+            alert(library.length);
+        });
+
+        for (let r = 0; r < rows; r++) {
+            $("#rows").append($('<option>', {value: r, text: r + 1}));
+        }
+
+        for (let c = 0; c < cols; c++) {
+            $("#cols").append($('<option>', {value: c, text: c + 1}));
+        }
+    </script>
+</body>
+</html>
